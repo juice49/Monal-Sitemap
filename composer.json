@@ -1,10 +1,10 @@
 {
     "name": "ash/monal-sitemap",
-    "description": "",
+    "description": "Sitemap generator for Monal CMS.",
+    "version": "0.0.1",
     "authors": [
         {
-            "name": "Arran Jacques",
-            "email": "arranjacques@gmail.com"
+            "name": "Ash"
         }
     ],
     "require": {
@@ -13,7 +13,10 @@
     },
     "autoload": {
         "classmap": [
-            "src/migrations"
+            "src/migrations",
+            "src/models",
+            "src/controllers",
+            "src/facades"
         ],
         "psr-0": {
             "Ash\\MonalSitemap\\": "src/"

@@ -1,44 +1,55 @@
 <?php namespace Ash\MonalSitemap;
 
-use Illuminate\Support\ServiceProvider;
+
+
+
+use Illuminate\Support\ServiceProvider, App, Config;
+
+
+
 
 class MonalSitemapServiceProvider extends ServiceProvider {
 
-	/**
-	 * Indicates if loading of the provider is deferred.
-	 *
-	 * @var bool
-	 */
+
+
+
 	protected $defer = false;
 
-	/**
-	 * Bootstrap the application events.
-	 *
-	 * @return void
-	 */
-	public function boot()
-	{
+
+
+
+	public function boot() {
 		$this->package('ash/monal-sitemap');
+		require(__DIR__ . '/../../routes.php');
 	}
 
-	/**
-	 * Register the service provider.
-	 *
-	 * @return void
-	 */
-	public function register()
-	{
-		//
+
+
+
+	public function register() {
+
+		App::singleton('sitemap', function() {
+			return new Models\Sitemap;
+		});
+
+		App::bind('SitemapEntity', function() {
+			return new Models\Entity;
+		});
+
+		App::bind('SitemapCollection', function() {
+			return new Models\Collection;
+		});
+
 	}
 
-	/**
-	 * Get the services provided by the provider.
-	 *
-	 * @return array
-	 */
-	public function provides()
-	{
+
+
+
+	public function provides() {
 		return array();
 	}
+
+
+
 
 }
