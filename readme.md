@@ -35,13 +35,13 @@ Full URI of the entity (excluding domain).
 
 #### $entity/$collection->name - required
 
-### $entity/$collection->lastmod
+#### $entity/$collection->lastmod
 
-### $entity/$collection->changefreq
+#### $entity/$collection->changefreq
 
-### $entity/$collection->priority
+#### $entity/$collection->priority
 
-### $collection->add($collection/$entity)
+#### $collection->add($collection/$entity)
 Add a collection or entity to the collection. Can be chained or given an array, for example:
 
 	$collection
@@ -53,7 +53,7 @@ Add a collection or entity to the collection. Can be chained or given an array, 
 		$subCollection2
 	]);
 
-### Example
+## Example
 
 	// Register a collection named 'products'
 	

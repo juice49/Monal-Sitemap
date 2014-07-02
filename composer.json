@@ -2,6 +2,7 @@
     "name": "ash/monal-sitemap",
     "description": "Sitemap generator for Monal CMS.",
     "version": "0.0.1",
+    "license": "MIT",
     "authors": [
         {
             "name": "Ash"
