@@ -6,7 +6,7 @@ By default Monal Sitemap places sitemaps at `sitemap` and `sitemap.xml`. This na
 
 ## Installation
 
-1. Fetch the package (add Packagist details here)
+1. Add `ash\monal-sitemap` as a Composer dependency and install
 2. Add `'Ash\MonalSitemap\MonalSitemapServiceProvider'` to app providers
 3. Add `'Sitemap' => 'Ash\MonalSitemap\Facades\Sitemap'` to app aliases
 
