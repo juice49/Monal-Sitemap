@@ -106,6 +106,15 @@ class Entity {
 	public function valid() {
 		return true;
 	}
+	
+	
+	
+	
+	public function entities() {
+		return isset($this->entities) && count($this->entities) > 0
+			? $this->entities
+			: false;
+	}
 
 
 

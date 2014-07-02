@@ -95,13 +95,22 @@ Add a collection or entity to the collection. Can be chained or given an array, 
 	
 	});
 
+## Templating
+The sitemap uses a view called `sitemap.blade.php` that you can publish to your local view directory in order to customise. The sitemap object is passed to the view as `$sitemap`.
+
+You can either iterate through the collections and entities manually, or use the `$sitemap->html()` function to output a `<ul>` containing the sitemap.
+
+Iterating through the sitemap to create a custom output is very simple, see the use of Blade's `@each` function in the default view.
+
 ## Todo
 - Add entity validation - `$entity->valid()` is check upon adding, currently always returns true
 - Unit tests
 - Add default cache duration as config item
-- Improve templating for HTML version
 - Implement gzipping of XML version
 
 ## Releases
+
+### 0.1.0 - 02/07/14
+- Improved HTML templating (now uses a Blade view that can be published to the local views dir)
 
 ### 0.0.1 - 01/07/14
