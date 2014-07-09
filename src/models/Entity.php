@@ -37,27 +37,24 @@ class Entity {
 	 */
 	public function xml() {
 		
-		$xml = '<url>';
-			
-		if(!isset($this->entities)) {
-			
-			$xml .= '<loc>' . URL::to($this->uri) . '</loc>';
-			
-			foreach($this->xmlTags as $tag) {
-				if($this->$tag) {
-					$xml .= '<' . $tag . '>' . $this->$tag . '</' . $tag . '>';
-				}
+		$xml = '';
+		
+		// Create the <url> node for the entity
+		$xml .= '<url>';
+		$xml .= '<loc>' . URL::to($this->uri) . '</loc>';
+		foreach($this->xmlTags as $tag) {
+			if($this->$tag) {
+				$xml .= '<' . $tag . '>' . $this->$tag . '</' . $tag . '>';
 			}
-			
-		} else {
-			
+		}
+		$xml .= '</url>';
+		
+		// Create the <url> nodes for the entity's descendants
+		if(isset($this->entities)) {
 			foreach($this->entities as $entity) {
 				$xml .= $entity->xml();
 			}
-			
 		}
-	
-		$xml .= '</url>';
 		
 		return $xml;
 		

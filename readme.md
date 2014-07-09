@@ -103,12 +103,16 @@ You can either iterate through the collections and entities manually, or use the
 Iterating through the sitemap to create a custom output is very simple, see the use of Blade's `@each` function in the default view.
 
 ## Todo
-- Add entity validation - `$entity->valid()` is check upon adding, currently always returns true
+- Should / could this be a generic Laravel tool, rather than being *for* Monal?
+- Add entity validation - `$entity->valid()` is checked upon adding, currently always returns true
 - Unit tests
 - Add default cache duration as config item
 - Implement gzipping of XML version
 
 ## Releases
+
+### 0.1.1 - 09/07/14
+- Fix XML output
 
 ### 0.1.0 - 02/07/14
 - Improved HTML templating (now uses a Blade view that can be published to the local views dir)
